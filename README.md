@@ -1,24 +1,78 @@
-# README
+# by_me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Application概要
+本アプリケーションは、使用者の”これから”と”これまで”を同時に管理・記録するアプリケーションです。
+つまりは、今後のスケジュール記録したり、過ぎ去った思い出をアルバムにして残しておくことができ、記録はいつでも確認することができます。
 
-Things you may want to cover:
+このアプリケーションを使用する主な目的としては、下記の３点に集約されます。
+- スケジュール管理を、より楽しく行える
+- 楽しかった思い出を、鮮明に保存しておくことができる
+- 使用者の更なる行動を引き出す
 
-* Ruby version
+## スケジュール管理を、より楽しく行える
+テキストだけでなく、写真を添付したり既存のアイコンを使用して自身のカレンダーを思い通りに彩ることができます。
+自身のスケジュールカレンダーは、人生そのもの。人生を楽しく過ごす一助になれば幸いです。
 
-* System dependencies
+## 楽しかった思い出を、鮮明に保存しておくことができる
+思い出をそのままアルバムとしてスケジュールに保存しておけるため、スケジュールの確認をするために楽しかった思い出を
+振り返ることができ、その後のアクションにポジティブな影響を与えてくれます。
 
-* Configuration
+## 使用者の更なる行動を引き出す
+自身のスケジュールを彩るためには、多くの予定や思い出が必要です。このアプリを使い始めれば自身のスケジュールを、
+自身の人生を謳歌せずにはいられなくなるでしょう。
 
-* Database creation
+## 使用言語・技術
+- Ruby
+- Ruby on Rails
+- JavaScript
+- HTML/CSS
+- AWS(EC2,S3)
+- SQL
 
-* Database initialization
+## デプロイ後のURL
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## テスト用アカウント
+- name: テストユーザー
+- email: test@test.com
+- password: test1234
 
-* Deployment instructions
+## 利用方法
 
-* ...
+
+## 目指した課題解決
+本アプリケーションを利用することで、20代〜30代男女のアクションを活性化し、自分で考え、自ら行動する主体性を育む。
+
+## 洗い出した要件
+- スケジュール管理にメリハリが欲しい
+- 日々の生活の振り返りをよりスムーズに行いたい
+- 自分の趣味を見つけられない
+- やってみたいことはあるが、手を出す勇気がない
+
+## データベース設計
+
+### ユーザー管理機能
+- Usersテーブル
+|Column|Type|Options|
+|---|---|---|
+|name|string|null:false|
+|email|string|null:false|
+|password|string|null:false|
+
+has_many: plans
+
+### 予定投稿機能
+- Plansテーブル
+|Column|Type|Options|
+|---|---|---|
+|date|date|null:false|
+|time|time|null:false|
+|title|string|null:false|
+|content|string|null:false|
+
+belongs_to: user
+
+## ローカルでの動作環境
+
+
+
